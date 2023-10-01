@@ -3,26 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css\styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Mashimaro TV</title>
   </head>
   <body>
-    <div class="container-media-controll">
+    <div class="container-media-control">
       <audio id="Music">
         <source src="chika-1.wav" type="audio/wav" />
         Tidak support di perangkat mobile. Coba buka page ini di Desktop/PC/Laptop
       </audio>
-      <!-- <button onclick="pauseAudio()" type="button">⏸️ Pause</button> -->
-      <button onclick="replayAudio()" type="button">🔁 Play/Repeat</button>
-      <button onclick="stopAudio()" type="button">⏹️ Stop</button>
+      <button id="ReplayButton" type="button">🔁 Play/Repeat</button>
     </div>
     <div class="container-content">
-      <h1 id="Text">
-        Sore wa Suteki na Showtime <br />
-        By Geneon Inc <br />
-        Anime by : Barasui - Ichigo Mashimaro
-      </h1>
+      <h1 class="lyrics" id="Intro1">Ichigo Mashimaro Character Song</h1>
+      <h1 class="lyrics" id="Intro2">Sung by: Saeko Chiba</h1>
+      <h1 class="lyrics" id="Intro3">Provided by: Geneon Inc</h1>
+      <h1 class="lyrics" id="Intro4">Sore Wa Suteki Na Showtime</h1>
     </div>
-    <script src="js\main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

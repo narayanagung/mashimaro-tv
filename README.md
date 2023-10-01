@@ -1,1 +1,1 @@
-Another excuse to "learn" JavaScript
+Another excuse to "learn" Javascript
