@@ -4,10 +4,15 @@
   justify-content: center;
 }
 .container-content {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }
 .lyrics {
   display: none;
+}
+.adlibs {
+  margin: 5rem;
+  display: none;
+  color: gray;
 }
