@@ -1,4 +1,5 @@
 const audio = document.getElementById("Music");
+
 const lyricsSections = [
   { id: "Intro1", start: 1, end: 6 }, // 00:01-00:06
   { id: "Intro2", start: 6, end: 11 },
@@ -29,24 +30,35 @@ const lyricsSections = [
   { id: "Chorus4-1", start: 83, end: 90 },
   { id: "Chorus4-1-1", start: 85, end: 90 },
   { id: "Chorus4-1-2", start: 87.5, end: 90 },
-  { id: "Adlib1-2", start: 90, end: 93 }, // 01:30-01:33
+  { id: "Adlib1-2", start: 90, end: 93 }, // 01:30-01:33 ( full length = 01:42 = 102 seconds )
 ];
 
 // Media control
-function replayAudio() {
+function playAudio() {
   audio.play();
-  audio.currentTime = 0;
-  document.title = "🎵 Sore Wa Suteki Na Showtime";
+  document.title = "Sore Wa Suteki Na Showtime";
+
+  disableButton();
 
   for (const section of lyricsSections) {
-    setTimeout(() => showLyrics(section.id), section.start * 1000);
-    setTimeout(() => hideLyrics(section.id), section.end * 1000);
+    timeoutIds.push(setTimeout(() => showLyrics(section.id), section.start * 1000)); // 1000 = 1 second
+    timeoutIds.push(setTimeout(() => hideLyrics(section.id), section.end * 1000));
   }
 }
 
-// Lyrics Visibility
+function stopAudio() {
+  audio.pause();
+  audio.currentTime = 0;
+  document.title = "Mashimaro TV"; //todo
+
+  clearTimeouts();
+  hideAllLyrics();
+}
+
+// Lyrics visibility
 function showLyrics(id) {
   const element = document.getElementById(id);
+
   if (element) {
     element.style.display = "block";
   }
@@ -54,13 +66,60 @@ function showLyrics(id) {
 
 function hideLyrics(id) {
   const element = document.getElementById(id);
+
   if (element) {
     element.style.display = "none";
   }
 }
 
-// Attach event listener to call replayAudio when needed
-const replayButton = document.getElementById("ReplayButton");
-if (replayButton) {
-  replayButton.addEventListener("click", replayAudio);
+// Track timeout lyrics and reset when Stop is pressed
+let timeoutIds = [];
+
+function clearTimeouts() {
+  for (const timeoutId of timeoutIds) {
+    clearTimeout(timeoutId);
+  }
+  timeoutIds = [];
+}
+
+// Hide all the lyrics abruptly when Stop is pressed
+function hideAllLyrics() {
+  for (const section of lyricsSections) {
+    hideLyrics(section.id);
+  }
+}
+
+// Button press
+const playButton = document.getElementById("PlayButton");
+const stopButton = document.getElementById("StopButton");
+
+if (playButton) {
+  playButton.addEventListener("click", playAudio);
+}
+
+if (stopButton) {
+  stopButton.addEventListener("click", stopAudio);
+}
+
+// Onclick event on button pressed
+//
+// Disable Play button after click
+let playbutton = document.getElementById("PlayButton");
+let timeoutIdStop;
+
+function disableButton() {
+  playbutton.disabled = true;
+
+  clearTimeout(timeoutIdStop);
+
+  timeoutIdStop = setTimeout(function () {
+    playbutton.disabled = false;
+  }, 102000); // 102 second = 01:42
+}
+
+// Restore Play button when Stop is pressed
+function enablePlayButton() {
+  playButton.disabled = false;
+
+  clearTimeout(timeoutIdStop);
 }
