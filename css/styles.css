@@ -1,18 +1,20 @@
+/* todo */
+
 .container-media-control {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
+
 .container-content {
   display: grid;
-  align-items: center;
-  justify-content: center;
 }
+
 .lyrics {
   display: none;
+  margin-top: 1rem;
 }
+
 .adlibs {
-  margin: 5rem;
+  margin-top: 5rem;
   display: none;
   color: gray;
 }
