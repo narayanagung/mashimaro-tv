@@ -1,11 +1,52 @@
 /* todo */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-.container-media-control {
-  display: flex;
+body {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  overflow: hidden;
 }
 
-.container-content {
+.home-container {
+  display: block;
+  margin: 40vh auto;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.3rem 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  font-size: large;
+}
+
+.container-media-control {
+  display: block;
+}
+
+.grid {
   display: grid;
+  height: 80vh;
+  grid-template-rows: 1fr 1fr;
+  padding-top: 2rem;
+}
+
+.container-lyrics {
+  display: block;
+}
+
+.container-adlibs {
+  display: block;
 }
 
 .lyrics {
@@ -14,7 +55,72 @@
 }
 
 .adlibs {
-  margin-top: 5rem;
   display: none;
   color: gray;
+}
+
+/* Keyframes for each lyrics section */
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes verse {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes chorus {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes adlibs {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation */
+.lyrics.intro {
+  animation: intro 1s ease-in-out;
+}
+
+.lyrics.verse {
+  animation: verse 0.3s ease-in-out;
+}
+
+.lyrics.chorus {
+  animation: chorus 1s ease-in-out;
+}
+
+.lyrics.adlib {
+  animation: adlibs 0.5s ease-in-out;
+}
+
+.adlibs.adlib {
+  animation: adlibs 0.5s ease-in-out;
 }

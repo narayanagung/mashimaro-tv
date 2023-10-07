@@ -1,17 +1,18 @@
-const audio = document.getElementById("Music");
-
+// Audio timestamp
 const lyricTimestamps = [
-  { id: "Intro1", start: 1, end: 6 }, // 00:01-00:06
-  { id: "Intro2", start: 6, end: 11 },
+  { id: "Intro1", start: 0.5, end: 8 }, // 00:01-00:06
+  { id: "Intro1-1", start: 4, end: 8 },
+  { id: "Intro2", start: 8, end: 15 },
   { id: "Intro3", start: 11, end: 15 },
   { id: "Intro4", start: 15, end: 27 },
-  { id: "Intro5", start: 22, end: 27 },
+  { id: "Intro4-1", start: 15, end: 27 },
+  { id: "Intro5", start: 18, end: 27 },
 
   { id: "Verse1-1", start: 28, end: 35 },
   { id: "Verse1-2", start: 31, end: 35 },
-  { id: "Verse2-1", start: 35, end: 42 },
-  { id: "Verse2-2", start: 38, end: 42 },
-  { id: "Verse3-1", start: 43, end: 54 },
+  { id: "Verse2-1", start: 35, end: 42.5 },
+  { id: "Verse2-2", start: 38, end: 42.5 },
+  { id: "Verse3-1", start: 42.5, end: 54 },
   { id: "Verse3-1-1", start: 48, end: 54 },
   { id: "Verse3-2", start: 50, end: 54 },
   { id: "Verse4-1", start: 54.5, end: 61.5 }, // 00:55-01:01
@@ -33,7 +34,12 @@ const lyricTimestamps = [
   { id: "Adlib1-2", start: 90, end: 93 }, // 01:30-01:33
 ];
 
-// Media control
+// Media player with Howler.js instead of native Javascript audio
+const audio = new Howl({
+  src: ["audio.mp3"],
+  html5: true,
+});
+
 function playAudio() {
   audio.play();
   document.title = "Sore Wa Suteki Na Showtime"; //todo
@@ -47,8 +53,7 @@ function playAudio() {
 }
 
 function stopAudio() {
-  audio.pause();
-  audio.currentTime = 0;
+  audio.stop();
   document.title = "Itou Chika Character Song"; //todo
 
   clearTimeouts();
@@ -102,11 +107,10 @@ function hideAllLyrics() {
 }
 
 // Onclick event on button pressed
-//
-// Disable Play button after click
 let playButtonOnClick = document.getElementById("PlayButton");
 let timeoutIdStop;
 
+// Disable Play button after click
 function disableButton() {
   playButtonOnClick.disabled = true;
 
@@ -125,22 +129,3 @@ function enablePlayButton() {
 
   clearTimeout(timeoutIdStop);
 }
-
-// Temporary
-//
-// Event listener to track song runtime
-const seconds = document.getElementById("Seconds");
-const humanize = document.getElementById("Humanize");
-
-// In seconds
-audio.addEventListener("timeupdate", function () {
-  seconds.textContent = `Seconds : ${Math.floor(audio.currentTime)}`;
-});
-
-// Human readable time (00:00)
-audio.addEventListener("timeupdate", function () {
-  const minutes = Math.floor(audio.currentTime / 60);
-  const seconds = Math.floor(audio.currentTime % 60);
-  const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-  humanize.textContent = `${formattedTime}`;
-});
