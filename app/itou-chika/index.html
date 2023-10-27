@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../../css/styles.css" />
+		<!-- Howler CDN -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+		<title>Itou Chika Character Song</title>
+	</head>
+	<body>
+		<h3>🍓 Strawberry Marshmallow</h3>
+		<div class="container-media-control">
+			<audio id="Music">
+				<source src="audio.mp3" type="audio/mp3" />
+				Your browser does not support the audio element.
+			</audio>
+			<button id="PlayButton" type="button" onclick="disableButton()">Play</button>
+			<button id="StopButton" type="button" onclick="enablePlayButton()">Stop</button>
+		</div>
+		<div class="grid">
+			<div class="container-lyrics"></div>
+			<div class="container-adlibs"></div>
+			<ul>
+				<li><a href="/index.html">Return</a></li>
+			</ul>
+		</div>
+		<script src="../../js/itou-chika-main.js"></script>
+	</body>
+</html>

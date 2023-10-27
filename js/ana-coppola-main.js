@@ -11,7 +11,7 @@ const audio = new Howl({
 
 function playAudio() {
 	audio.play();
-	document.title = "Sore Wa Suteki Na Showtime"; //todo
+	document.title = "Made In Onna No Ko"; //todo
 
 	disableButton();
 
@@ -23,7 +23,7 @@ function playAudio() {
 
 function stopAudio() {
 	audio.stop();
-	document.title = "Itou Chika Character Song"; //todo
+	document.title = "Ana Coppola Character Song"; //todo
 
 	clearTimeouts();
 	hideAllLyrics();
@@ -88,8 +88,8 @@ function disableButton() {
 	timeoutIdStop = setTimeout(function () {
 		playButtonOnClick.disabled = false;
 
-		document.title = "Itou Chika Character Song"; //todo
-	}, 99999); // 102 second = 01:42 // 1000 = 1 second
+		document.title = "Ana Coppola Character Song"; //todo
+	}, 99999); // 1000 = 1 second
 }
 
 // Restore Play button when Stop is pressed
