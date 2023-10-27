@@ -11,20 +11,19 @@
 	<body>
 		<h3>🍓 Strawberry Marshmallow</h3>
 		<div class="container-media-control">
-			<audio id="Music">
-				<source src="audio.mp3" type="audio/mp3" />
-				Your browser does not support the audio element.
-			</audio>
-			<button id="PlayButton" type="button" onclick="disableButton()">Play</button>
-			<button id="StopButton" type="button" onclick="enablePlayButton()">Stop</button>
+			<audio id="audio" src="audio.mp3" controls></audio>
 		</div>
 		<div class="grid">
-			<div class="container-lyrics"></div>
+			<div class="lyrics" id="lyrics">
+				<p data-time="5">Verse 1: This is the first line of the lyrics</p>
+				<p data-time="10">Verse 1: This is the second line of the lyrics</p>
+				<p data-time="15">Chorus: This is the chorus of the song</p>
+			</div>
 			<div class="container-adlibs"></div>
 			<ul>
 				<li><a href="/index.html">Return</a></li>
 			</ul>
 		</div>
-		<script src="../../js/sakuragi-matsuri-main.js"></script>
+		<script src="../../js/main.js"></script>
 	</body>
 </html>

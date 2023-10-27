@@ -26,8 +26,14 @@ a {
   text-decoration: none;
 }
 
-span {
+.lyrics p {
   font-size: large;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.lyrics p.active {
+  opacity: 1;
 }
 
 .container-media-control {
@@ -38,7 +44,6 @@ span {
   display: grid;
   height: 80vh;
   grid-template-rows: 1fr 1fr;
-  padding-top: 2rem;
 }
 
 .container-lyrics {
@@ -47,11 +52,6 @@ span {
 
 .container-adlibs {
   display: block;
-}
-
-.lyrics {
-  display: none;
-  margin-top: 1rem;
 }
 
 .adlibs {
