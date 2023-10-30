@@ -16,6 +16,7 @@ audio.addEventListener("timeupdate", (e) => {
 			document.getElementById("overflow").style.overflowY = "scroll";
 
 			//Auto scroll the highlighted lyric if toggle button is "ON"
+			//Extremely Buggy in mobile device
 			if (autoScroll) {
 				document.getElementById("overflow").style.overflowY = "hidden";
 				line.scrollIntoView({
@@ -29,13 +30,13 @@ audio.addEventListener("timeupdate", (e) => {
 	}
 });
 
-//Auto scroll toggle button default "ON"
-let autoScroll = true;
+//Auto scroll toggle button default "OFF"
+let autoScroll = false;
 
 toggleAutoScroll.addEventListener("click", () => {
 	const toggleAutoScroll = document.getElementById("toggleAutoScroll");
 	autoScroll = !autoScroll;
-	toggleAutoScroll.textContent = autoScroll ? "🔒 Auto Scroll ON" : "🔓 Auto Scroll OFF";
+	toggleAutoScroll.textContent = autoScroll ? "🔒 Lyrics Auto Scrolll ON" : "🔓 Lyrics Auto Scroll OFF";
 });
 
 //Clicking any lyrics will make the audio jump to their timestamp
