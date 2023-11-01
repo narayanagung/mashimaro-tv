@@ -13,4 +13,3 @@ Felt good because none of this song is available on any music streaming platform
 ### Problems
 
 -   Auto scroll are buggy in mobile device
--   Still using native html5 `<audio>`
