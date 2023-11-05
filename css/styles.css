@@ -71,21 +71,17 @@ pre {
 }
 
 .lyrics p {
-  opacity: 1;
   cursor: pointer;
   font-weight: 600;
-  font-size: 900;
   color: black;
 }
 
 .lyrics p:hover {
-  opacity: 1;
   color: #f1f3f4;
   transition: 100ms;
 }
 
 .lyrics p.active {
-  opacity: 1;
   color: #f1f3f4;
 }
 
@@ -100,12 +96,12 @@ pre {
 }
 
 #overflow {
-  height: 40vh;
+  height: 50vh;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
   text-align: left;
-  padding: 0 1rem 2rem 1rem;
+  padding: 0 1rem 1rem 1rem;
   border-radius: 8px;
 }
 
@@ -123,7 +119,6 @@ pre {
 .wrap {
   padding: 0.5rem 0 0.5rem 0;
   border-radius: 8px;
-  box-sizing: border-box;
   text-align: center;
 }
 
@@ -133,7 +128,7 @@ pre {
   }
 
   .lyrics p {
-    font-size: large;
+    font-size: larger;
   }
 
   .card {
@@ -166,10 +161,6 @@ pre {
     margin: 0 8rem 0 8rem;
   }
 
-  .lyrics p {
-    font-size: larger;
-  }
-
   .home-grid {
     padding: 0 10rem 0 10rem;
   }
@@ -182,6 +173,10 @@ pre {
 
   button {
     display: initial;
+  }
+
+  .lyrics p {
+    font-size: x-large;
   }
 
   .home-grid {

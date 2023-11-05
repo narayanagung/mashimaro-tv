@@ -15,12 +15,14 @@ audio.addEventListener("timeupdate", (e) => {
 			line.classList.add("active");
 			document.getElementById("overflow").style.overflowY = "scroll";
 
-			//Auto scroll the highlighted lyric if toggle button is "ON"
-			//Extremely Buggy in mobile device
 			if (autoScroll) {
 				document.getElementById("overflow").style.overflowY = "hidden";
+
+				//Auto scroll using scrollIntoView
+				//Works badly in mobile device and jitters if we try to manually scroll while active
+				//I found a way to maybe solve this and also implement smooth scroll using React
+				//I want to make this simple and static so... no rebuild!
 				line.scrollIntoView({
-					behavior: "smooth",
 					block: "center",
 				});
 			}
@@ -30,7 +32,7 @@ audio.addEventListener("timeupdate", (e) => {
 	}
 });
 
-//Auto scroll toggle button default "OFF"
+//Auto scroll toggle button
 let autoScroll = false;
 
 toggleAutoScroll.addEventListener("click", () => {
