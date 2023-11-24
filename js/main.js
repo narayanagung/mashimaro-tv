@@ -38,7 +38,9 @@ let autoScroll = false;
 toggleAutoScroll.addEventListener("click", () => {
 	const toggleAutoScroll = document.getElementById("toggleAutoScroll");
 	autoScroll = !autoScroll;
-	toggleAutoScroll.textContent = autoScroll ? "🔒 Lyrics Auto Scrolll ON" : "🔓 Lyrics Auto Scroll OFF";
+	toggleAutoScroll.textContent = autoScroll ? "🔒 Lyrics Auto Scroll ON" : "🔓 Lyrics Auto Scroll OFF";
+	toggleAutoScroll.style.border = autoScroll ? "solid 2px #f1f3f4" : "solid 1px lightslategray";
+	toggleAutoScroll.style.color = autoScroll ? "#f1f3f4" : "lightslategray";
 });
 
 //Clicking any lyrics will make the audio jump to their timestamp
