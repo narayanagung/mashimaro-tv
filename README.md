@@ -1,4 +1,6 @@
-### Published on [mashimarotv.vercel.app](https://mashimarotv.vercel.app/)
+# Spotify-ish Song Lyrics
+
+### [mashimarotv.vercel.app](https://mashimarotv.vercel.app/)
 
 ### Features
 
