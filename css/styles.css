@@ -29,9 +29,20 @@ a {
   color: #f1f3f4;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: #f1f3f4;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #00a6f9;
+}
+
 img {
-  width: 6rem;
+  width: 4rem;
   border-radius: 4px;
+  display: block;
 }
 
 small {
@@ -39,36 +50,59 @@ small {
 }
 
 button {
-  display: none;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 0.3rem 0.5rem;
   cursor: pointer;
   font-weight: 600;
-  color: lightslategray;
-  background-color: black;
-  border: solid 1px lightslategray;
-  margin-bottom: 1rem;
+  color: #f1f3f4;
+  background-color: #1a1a1a;
+  border: 0;
 }
 
-hr {
-  margin: 1rem 0 1rem 0;
-  border-radius: 2px;
+button:hover {
+  background-color: #f1f3f4;
+  color: black;
+  border: 0;
+  transition: 200ms;
+}
+
+.scroll-button {
+  display: none;
 }
 
 pre {
   font-size: small;
+  color: #f1f3f4;
 }
 
 nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0 2rem 0 2rem; */
+}
+
+audio {
+  width: 270px;
+  height: 54px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .home-container {
-  display: block;
   text-align: center;
+}
+
+.button-container {
+  display: flex;
+  padding: 1rem;
+  justify-content: start;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .lyrics p {
@@ -79,7 +113,7 @@ nav ul {
 
 .lyrics p:hover {
   color: #f1f3f4;
-  transition: 100ms;
+  transition: 200ms;
 }
 
 .lyrics p.active {
@@ -93,7 +127,12 @@ nav ul {
 
 .card:hover {
   border: #f1f3f4 solid 1px;
-  transition: 100ms;
+  transition: 200ms;
+}
+
+.lyrics-container {
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 #overflow {
@@ -118,9 +157,9 @@ nav ul {
 }
 
 .wrap {
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.5rem;
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
   box-sizing: border-box;
 }
 
@@ -138,11 +177,11 @@ nav ul {
     display: flex;
     gap: 1rem;
     align-items: center;
-    margin: 0 0 1rem 0;
+    margin-bottom: 1rem;
     border-radius: 8px;
     border: lightslategray solid 1px;
     background-color: black;
-    padding: 1.5rem;
+    padding: 0 1rem 0 1rem;
     flex-shrink: 0;
   }
 
@@ -150,12 +189,20 @@ nav ul {
     display: flex;
     overflow-x: auto;
     gap: 1rem;
-    height: 11rem;
+    height: 8rem;
   }
 
   .home-grid {
     display: block;
     padding: 0 1rem 0 1rem;
+  }
+
+  .home-grid .card {
+    padding: 1rem;
+  }
+
+  .hero img {
+    width: 8rem;
   }
 }
 
@@ -167,6 +214,10 @@ nav ul {
   .home-grid {
     padding: 0 10rem 0 10rem;
   }
+
+  .hero img {
+    width: 7rem;
+  }
 }
 
 @media screen and (min-width: 1220px) {
@@ -174,7 +225,7 @@ nav ul {
     margin: 0 20rem 0 20rem;
   }
 
-  button {
+  .scroll-button {
     display: initial;
   }
 
@@ -184,6 +235,10 @@ nav ul {
 
   .home-grid {
     padding: 0 30rem 0 30rem;
+  }
+
+  .hero img {
+    width: 6rem;
   }
 }
 
@@ -198,10 +253,10 @@ nav ul {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: lightslategray;
+  background: #f1f3f4;
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: darkslategray;
+  background: lightslategray;
 }
