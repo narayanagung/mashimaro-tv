@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../../css/styles-min.css" />
+		<link rel="stylesheet" href="../../css/styles.css" />
 		<title>Made In Onnanoko - Ana Coppola Character Song</title>
 	</head>
 	<body>
@@ -11,40 +11,50 @@
 			<nav>
 				<ul>
 					<li>
-						<h3><a href="/">Mashimaro TV</a></h3>
+						<h3><a href="/" class="nav-link">Mashimaro TV</a></h3>
 					</li>
-					<li><a href="https://github.com/narayanagung/mashimaro-tv" target="_blank">github↗</a></li>
+					<li><a href="https://github.com/narayanagung/mashimaro-tv" target="_blank" class="nav-link">Github↗</a></li>
 				</ul>
 			</nav>
-			<div class="home-container">
-				<h1>Made In Onnanoko</h1>
-				<h4>Made in 女の子</h4>
-				<button type="button" id="toggleAutoScroll">🔓 Lyrics Auto Scroll OFF</button>
-			</div>
-			<div id="overflow" style="background-color: #009146">
-				<div class="lyrics" id="lyrics">
-					<p timestamp="0.1">Ana Coppola Character Song</p>
-					<p timestamp="4">Ichigo Mashimaro Chara-CD</p>
-					<p timestamp="7.5">Based on Barasui Manga Series</p>
-					<p timestamp="11.5">Provided by Geneon Inc</p>
-					<p timestamp="13.5">Made In Onnanoko</p>
-					<p timestamp="17">Sung by Mamiko Noto</p>
-					<p timestamp="19">♫ ♫ ♫</p>
-					<p timestamp="21.5">Dare ni mo naisho ni shite mune no naka</p>
-					<p timestamp="29">Himeteta omoi yo uchi akerune</p>
-					<p timestamp="36.5">Donna toki mo itsumo nani shite mo</p>
-					<p timestamp="43.5">(Anata) ga ichiban suteki dawa</p>
-					<p timestamp="50">- - -</p>
-					<p timestamp="50">Shippai shitattene kitto daijobu</p>
-					<p timestamp="58.5">Sono egao dakede subete chara ni naru desho</p>
-					<p timestamp="66">Kyou mo hitori tsubuyaku kagami no mae [OK]</p>
-					<p timestamp="73.5">Onnanoko wa jibun ga daisuki nan desu</p>
-					<p timestamp="81">♫ ♫ ♫</p>
-					<pre>Lyrics provided by <a href="https://www.animelyrics.com/">animelyrics↗</a></pre>
+			<div class="hero">
+				<div>
+					<h1>Made In Onnanoko</h1>
+					<h3><small>Mamiko Noto</small></h3>
+				</div>
+				<div>
+					<img src="cover.jpg" alt="Cover Art" />
 				</div>
 			</div>
-			<div class="wrap">
-				<audio id="audio" class="wrap" src="audio.mp3" controls>Your browser does not support the audio element.</audio>
+			<div class="lyrics-container" style="background-color: #009146">
+				<div class="button-container">
+					<button title="Enter/exit full screen mode" type="button" id="toggleFullscreenButton">&#x1F5D6;</button>
+					<button title="Auto scroll the lyrics when played" type="button" class="scroll-button" id="toggleAutoScroll">🔓 Auto Scroll OFF</button>
+				</div>
+				<div id="overflow">
+					<div class="lyrics" id="lyrics">
+						<p timestamp="0.1">Ana Coppola Character Song</p>
+						<p timestamp="4">Ichigo Mashimaro Chara-CD</p>
+						<p timestamp="7.5">Based on Barasui Manga Series</p>
+						<p timestamp="11.5">Provided by Geneon Inc</p>
+						<p timestamp="13.5">Made In Onnanoko</p>
+						<p timestamp="17">Sung by Mamiko Noto</p>
+						<p timestamp="19">♫ ♫ ♫</p>
+						<p timestamp="21.5">Dare ni mo naisho ni shite mune no naka</p>
+						<p timestamp="29">Himeteta omoi yo uchi akerune</p>
+						<p timestamp="36.5">Donna toki mo itsumo nani shite mo</p>
+						<p timestamp="43.5">(Anata) ga ichiban suteki dawa</p>
+						<p timestamp="50">- - -</p>
+						<p timestamp="50">Shippai shitattene kitto daijobu</p>
+						<p timestamp="58.5">Sono egao dakede subete chara ni naru desho</p>
+						<p timestamp="66">Kyou mo hitori tsubuyaku kagami no mae [OK]</p>
+						<p timestamp="73.5">Onnanoko wa jibun ga daisuki nan desu</p>
+						<p timestamp="81">♫ ♫ ♫</p>
+						<pre>Lyrics provided by <a href="https://www.animelyrics.com/" target="_blank" class="nav-link">animelyrics↗</a></pre>
+					</div>
+				</div>
+				<div class="wrap">
+					<audio id="audio" class="wrap" src="audio.mp3" controls>Your browser does not support the audio element.</audio>
+				</div>
 			</div>
 			<div class="media">
 				<div class="row">
@@ -98,6 +108,6 @@
 				<small>DISCLAIMER : "Mashimaro TV" did not provide the full song. If you interested please support the original creator!</small>
 			</div>
 		</div>
-		<script src="../../js/main-min.js"></script>
+		<script src="../../js/main.js"></script>
 	</body>
 </html>

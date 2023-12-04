@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../../css/styles-min.css" />
+		<link rel="stylesheet" href="../../css/styles.css" />
 		<title>Miruku O Koboshite - Sakuragi Matsuri Character Song</title>
 	</head>
 	<body>
@@ -11,41 +11,51 @@
 			<nav>
 				<ul>
 					<li>
-						<h3><a href="/">Mashimaro TV</a></h3>
+						<h3><a href="/" class="nav-link">Mashimaro TV</a></h3>
 					</li>
-					<li><a href="https://github.com/narayanagung/mashimaro-tv" target="_blank">github↗</a></li>
+					<li><a href="https://github.com/narayanagung/mashimaro-tv" target="_blank" class="nav-link">Github↗</a></li>
 				</ul>
 			</nav>
-			<div class="home-container">
-				<h1>Miruku O Koboshite</h1>
-				<h4>ミルクをこぼして</h4>
-				<button type="button" id="toggleAutoScroll">🔓 Lyrics Auto Scroll OFF</button>
-			</div>
-			<div id="overflow" style="background-color: #1555d5">
-				<div class="lyrics" id="lyrics">
-					<p timestamp="0.1">Sakuragi Matsuri Character Song</p>
-					<p timestamp="4">Ichigo Mashimaro Chara-CD</p>
-					<p timestamp="6">Based on Barasui Manga Series</p>
-					<p timestamp="8">Provided by Geneon Inc</p>
-					<p timestamp="10">Miruku O Koboshite</p>
-					<p timestamp="12">Sung by Kawasumi Ayako</p>
-					<p timestamp="14">♫ ♫ ♫</p>
-					<p timestamp="16">Daisuki na daisuki na pinku no kutsu</p>
-					<p timestamp="24">Kake dashita shunkan ni tsumazuita no</p>
-					<p timestamp="32">Sotto sotto sotto sotto aruki daseba</p>
-					<p timestamp="39.5">Yukkurito shiroi kumo tsuite kita yo</p>
-					<p timestamp="47.5">Watashi no iru sekai wa minna minna isogashii chotto mattete</p>
-					<p timestamp="60.5">- - -</p>
-					<p timestamp="60.5">Te wo tsunagu no kana tooku made yuku no kana</p>
-					<p timestamp="68.5">Doushi yo naze ka naki sou ni matte shimau</p>
-					<p timestamp="77">Sakki koboshita miruku nano</p>
-					<p timestamp="84.5">Hitotsu bude subete kae teshimau fushigi</p>
-					<p timestamp="92.5">♫ ♫ ♫</p>
-					<pre>Lyrics provided by <a href="https://www.animelyrics.com">animelyrics↗</a></pre>
+			<div class="hero">
+				<div>
+					<h1>Miruku O Koboshite</h1>
+					<h3><small>Kawasumi Ayako</small></h3>
+				</div>
+				<div>
+					<img src="cover.jpg" alt="Cover Art" />
 				</div>
 			</div>
-			<div class="wrap">
-				<audio id="audio" class="wrap" src="audio.mp3" controls>Your browser does not support the audio element.</audio>
+			<div class="lyrics-container" style="background-color: #1555d5">
+				<div class="button-container">
+					<button title="Enter/exit full screen mode" type="button" id="toggleFullscreenButton">&#x1F5D6;</button>
+					<button title="Auto scroll the lyrics when played" type="button" class="scroll-button" id="toggleAutoScroll">🔓 Auto Scroll OFF</button>
+				</div>
+				<div id="overflow">
+					<div class="lyrics" id="lyrics">
+						<p timestamp="0.1">Sakuragi Matsuri Character Song</p>
+						<p timestamp="4">Ichigo Mashimaro Chara-CD</p>
+						<p timestamp="6">Based on Barasui Manga Series</p>
+						<p timestamp="8">Provided by Geneon Inc</p>
+						<p timestamp="10">Miruku O Koboshite</p>
+						<p timestamp="12">Sung by Kawasumi Ayako</p>
+						<p timestamp="14">♫ ♫ ♫</p>
+						<p timestamp="16">Daisuki na daisuki na pinku no kutsu</p>
+						<p timestamp="24">Kake dashita shunkan ni tsumazuita no</p>
+						<p timestamp="32">Sotto sotto sotto sotto aruki daseba</p>
+						<p timestamp="39.5">Yukkurito shiroi kumo tsuite kita yo</p>
+						<p timestamp="47.5">Watashi no iru sekai wa minna minna isogashii chotto mattete</p>
+						<p timestamp="60.5">- - -</p>
+						<p timestamp="60.5">Te wo tsunagu no kana tooku made yuku no kana</p>
+						<p timestamp="68.5">Doushi yo naze ka naki sou ni matte shimau</p>
+						<p timestamp="77">Sakki koboshita miruku nano</p>
+						<p timestamp="84.5">Hitotsu bude subete kae teshimau fushigi</p>
+						<p timestamp="92.5">♫ ♫ ♫</p>
+						<pre>Lyrics provided by <a href="https://www.animelyrics.com" target="_blank" class="nav-link">animelyrics↗</a></pre>
+					</div>
+				</div>
+				<div class="wrap">
+					<audio id="audio" class="wrap" src="audio.mp3" controls>Your browser does not support the audio element.</audio>
+				</div>
 			</div>
 			<div class="media">
 				<div class="row">
@@ -99,6 +109,6 @@
 				<small>DISCLAIMER : "Mashimaro TV" did not provide the full song. If you interested please support the original creator!</small>
 			</div>
 		</div>
-		<script src="../../js/main-min.js"></script>
+		<script src="../../js/main.js"></script>
 	</body>
 </html>
