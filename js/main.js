@@ -1,6 +1,7 @@
+// Set the timestamp
 audio.addEventListener("timeupdate", (e) => {
-	const audio = document.getElementById("audio");
-	const lyrics = document.getElementById("lyrics");
+	const audio = document.querySelector("#audio");
+	const lyrics = document.querySelector("#lyrics");
 
 	const currentTime = audio.currentTime;
 
@@ -13,15 +14,13 @@ audio.addEventListener("timeupdate", (e) => {
 		//When the lyrics timestamp is matching the audio time : highlight the lyric
 		if (currentTime >= startTime && currentTime < endTime) {
 			line.classList.add("active");
-			document.getElementById("overflow").style.overflowY = "scroll";
+			document.querySelector("#overflow").style.overflowY = "scroll";
 
 			if (autoScroll) {
-				document.getElementById("overflow").style.overflowY = "hidden";
+				document.querySelector("#overflow").style.overflowY = "hidden";
 
 				//Auto scroll using scrollIntoView
-				//Works badly in mobile device and jitters if we try to manually scroll while active
-				//I found a way to maybe solve this and also implement smooth scroll using React
-				//I want to make this simple and static so... no rebuild!
+				//Works badly in mobile device (jitters while active)
 				line.scrollIntoView({
 					block: "center",
 				});
@@ -32,15 +31,14 @@ audio.addEventListener("timeupdate", (e) => {
 	}
 });
 
-//Auto scroll toggle button
+//Auto scroll toggle
 let autoScroll = false;
 
 toggleAutoScroll.addEventListener("click", () => {
-	const toggleAutoScroll = document.getElementById("toggleAutoScroll");
+	const toggleAutoScroll = document.querySelector("#toggleAutoScroll");
 	autoScroll = !autoScroll;
-	toggleAutoScroll.textContent = autoScroll ? "🔒 Lyrics Auto Scroll ON" : "🔓 Lyrics Auto Scroll OFF";
-	toggleAutoScroll.style.border = autoScroll ? "solid 2px #f1f3f4" : "solid 1px lightslategray";
-	toggleAutoScroll.style.color = autoScroll ? "#f1f3f4" : "lightslategray";
+	toggleAutoScroll.textContent = autoScroll ? "🔒 Auto Scroll ON" : "🔓 Auto Scroll OFF";
+	toggleAutoScroll.style.border = autoScroll ? "solid 2px #f1f3f4" : "";
 });
 
 //Clicking any lyrics will make the audio jump to their timestamp
@@ -51,10 +49,61 @@ lyrics.addEventListener("click", (e) => {
 	}
 });
 
-// Prevent the default behavior of space button & set the focus to media control
+// Prevent the default behavior of space key on the keyboard (set the focus to the play audio)
 document.addEventListener("keydown", function (e) {
 	if (e.key === " ") {
 		e.preventDefault();
 		audio.focus();
 	}
+});
+
+// Handle the fullscreen for most browser
+document.addEventListener("DOMContentLoaded", () => {
+	const toggleFullscreenButton = document.querySelector("#toggleFullscreenButton");
+	const lyricsContainer = document.querySelector(".lyrics-container");
+
+	toggleFullscreenButton.addEventListener("click", () => {
+		toggleFullscreen();
+	});
+
+	function toggleFullscreen() {
+		if (document.fullscreenElement) {
+			exitFullscreen();
+		} else {
+			enterFullscreen();
+		}
+	}
+
+	function enterFullscreen() {
+		if (lyricsContainer.requestFullscreen) {
+			lyricsContainer.requestFullscreen();
+		} else if (lyricsContainer.mozRequestFullScreen) {
+			lyricsContainer.mozRequestFullScreen();
+		} else if (lyricsContainer.webkitRequestFullscreen) {
+			lyricsContainer.webkitRequestFullscreen();
+		} else if (lyricsContainer.msRequestFullscreen) {
+			lyricsContainer.msRequestFullscreen();
+		}
+	}
+
+	function exitFullscreen() {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+		} else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+		}
+	}
+
+	document.addEventListener("fullscreenchange", () => {
+		const overflow = document.querySelector("#overflow");
+		if (document.fullscreenElement) {
+			overflow.style.height = "80vh";
+		} else {
+			overflow.style.height = "50vh";
+		}
+	});
 });
