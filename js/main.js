@@ -23,6 +23,7 @@ audio.addEventListener("timeupdate", (e) => {
 				//Works badly in mobile device (jitters while active)
 				line.scrollIntoView({
 					block: "center",
+					// behavior: "smooth",
 				});
 			}
 		} else {
@@ -102,8 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		const overflow = document.querySelector("#overflow");
 		if (document.fullscreenElement) {
 			overflow.style.height = "80vh";
+			toggleFullscreenButton.innerHTML = "<sup>↘</sup><sub>↖</sub>";
+			toggleFullscreenButton.style.border = "solid 2px #f1f3f4";
 		} else {
 			overflow.style.height = "50vh";
+			toggleFullscreenButton.innerHTML = "<sup>↖</sup><sub>↘</sub>";
+			toggleFullscreenButton.style.border = "";
 		}
 	});
 });

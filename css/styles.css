@@ -50,8 +50,8 @@ small {
 }
 
 button {
-  border-radius: 16px;
-  padding: 0.3rem 0.5rem;
+  border-radius: 30px;
+  padding: 0.5rem 0.7rem;
   cursor: pointer;
   font-weight: 600;
   color: #f1f3f4;
@@ -81,11 +81,6 @@ nav ul {
   align-items: center;
 }
 
-audio {
-  width: 270px;
-  height: 54px;
-}
-
 .hero {
   display: flex;
   justify-content: space-between;
@@ -99,7 +94,7 @@ audio {
 
 .button-container {
   display: flex;
-  padding: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
   justify-content: start;
   gap: 0.5rem;
   align-items: center;
@@ -202,7 +197,11 @@ audio {
   }
 
   .hero img {
-    width: 8rem;
+    width: 7rem;
+  }
+
+  audio {
+    width: 100%;
   }
 }
 
@@ -215,8 +214,8 @@ audio {
     padding: 0 10rem 0 10rem;
   }
 
-  .hero img {
-    width: 7rem;
+  audio {
+    width: 70%;
   }
 }
 
@@ -239,6 +238,10 @@ audio {
 
   .hero img {
     width: 6rem;
+  }
+
+  audio {
+    width: 50%;
   }
 }
 
