@@ -19,25 +19,30 @@
 			<div class="hero">
 				<div>
 					<h1>Miruku O Koboshite</h1>
-					<h3><small>Kawasumi Ayako</small></h3>
+					<h3>
+						<a href="https://myanimelist.net/people/13/Ayako_Kawasumi" class="nav-link" target="_blank"><small>Ayako Kawasumi↗</small></a>
+					</h3>
 				</div>
-				<div>
-					<img src="cover.jpg" alt="Cover Art" />
-				</div>
+				<div class="hero-template matsuri"></div>
 			</div>
-			<div class="lyrics-container" style="background-color: #1555d5">
+			<canvas id="visualizer"></canvas>
+			<div class="lyrics-container matsuri">
 				<div class="button-container">
+					<div class="button-left">
+						<button title="Auto scroll the lyrics when played" type="button" class="scroll-button" id="toggleAutoScroll">🔓 Auto Scroll</button>
+						<button title="Repeat the song when over (repeat by default)" type="button" class="scroll-button" id="toggleRepeat">🔁 Repeat</button>
+					</div>
 					<button title="Enter/exit full screen mode" type="button" id="toggleFullscreenButton"><sup>↖</sup><sub>↘</sub></button>
-					<button title="Auto scroll the lyrics when played" type="button" class="scroll-button" id="toggleAutoScroll">🔓 Auto Scroll OFF</button>
 				</div>
 				<div id="overflow">
 					<div class="lyrics" id="lyrics">
+						<p timestamp="0.1"></p>
 						<p timestamp="0.1">Sakuragi Matsuri Character Song</p>
 						<p timestamp="4">Ichigo Mashimaro Chara-CD</p>
 						<p timestamp="6">Based on Barasui Manga Series</p>
 						<p timestamp="8">Provided by Geneon Inc</p>
 						<p timestamp="10">Miruku O Koboshite</p>
-						<p timestamp="12">Sung by Kawasumi Ayako</p>
+						<p timestamp="12">Sung by Ayako Kawasumi</p>
 						<p timestamp="14">♫ ♫ ♫</p>
 						<p timestamp="16">Daisuki na daisuki na pinku no kutsu</p>
 						<p timestamp="24">Kake dashita shunkan ni tsumazuita no</p>
@@ -54,59 +59,43 @@
 					</div>
 				</div>
 				<div class="wrap">
-					<audio id="audio" class="wrap" src="audio.mp3" preload="auto" controls>Your browser does not support the audio element.</audio>
+					<audio id="audio" class="wrap" src="audio.mp3" preload="auto" controls loop>Your browser does not support the audio element.</audio>
 				</div>
 			</div>
 			<div class="media">
 				<div class="row">
-					<div class="card" style="border: white 2px solid">
-						<a href="./index.html">
-							<img src="cover.jpg" alt="Cover Art" />
-						</a>
-						<a href="./index.html">
-							<ul>
-								<li>Miruku O Koboshite</li>
-								<li><small>Kawasumi Ayako</small></li>
-							</ul>
-						</a>
-					</div>
-					<div class="card">
-						<a href="../ana/index.html">
-							<img src="../ana/cover.jpg" alt="Cover Art" />
-						</a>
-						<a href="../ana/index.html">
-							<ul>
-								<li>Made In Onnanoko</li>
-								<li><small>Mamiko Noto</small></li>
-							</ul>
-						</a>
-					</div>
-					<div class="card">
-						<a href="../miu/index.html">
-							<img src="../miu/cover.jpg" alt="Cover Art" />
-						</a>
-						<a href="../miu/index.html">
-							<ul>
-								<li>Osanpo Kyousoukyoku</li>
-								<li><small>Fumiko Orikasa</small></li>
-							</ul>
-						</a>
-					</div>
-					<div class="card">
-						<a href="../chika/index.html">
-							<img src="../chika/cover.jpg" alt="Cover Art" />
-						</a>
-						<a href="../chika/index.html">
-							<ul>
-								<li>Sore Wa Suteki Na Showtime</li>
-								<li><small>Saeko Chiba</small></li>
-							</ul>
-						</a>
-					</div>
+					<a href="./index.html" class="card active">
+						<img src="cover.jpg" alt="Cover Art" />
+						<ul>
+							<li>Miruku O Koboshite</li>
+							<li><small>Ayako Kawasumi</small></li>
+						</ul>
+					</a>
+					<a href="../ana/index.html" class="card">
+						<img src="../ana/cover.jpg" alt="Cover Art" />
+						<ul>
+							<li>Made In Onnanoko</li>
+							<li><small>Mamiko Noto</small></li>
+						</ul>
+					</a>
+					<a href="../miu/index.html" class="card">
+						<img src="../miu/cover.jpg" alt="Cover Art" />
+						<ul>
+							<li>Osanpo Kyousoukyoku</li>
+							<li><small>Fumiko Orikasa</small></li>
+						</ul>
+					</a>
+					<a href="../chika/index.html" class="card">
+						<img src="../chika/cover.jpg" alt="Cover Art" />
+						<ul>
+							<li>Sore Wa Suteki Na Showtime</li>
+							<li><small>Saeko Chiba</small></li>
+						</ul>
+					</a>
 				</div>
 			</div>
 			<div class="footer">
-				<small>DISCLAIMER : "Mashimaro TV" did not provide the full song. If you interested please support the original creator!</small>
+				<small>Made with 💟 by narayanagung</small>
 			</div>
 		</div>
 		<script src="../../js/main.js"></script>
