@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	//Clicking any lyrics will make the audio jump to their timestamp
+	// Clicking any lyrics will make the audio jump to their timestamp
 	lyrics.addEventListener("click", (e) => {
 		if (e.target.tagName === "P") {
 			const startTime = parseFloat(e.target.getAttribute("timestamp"));
@@ -137,44 +137,4 @@ document.addEventListener("DOMContentLoaded", () => {
 			document.msExitFullscreen();
 		}
 	}
-
-	// Audio visualizer
-	const audioContext = new (window.AudioContext || window.AudioContext)();
-	const analyser = audioContext.createAnalyser();
-	const source = audioContext.createMediaElementSource(audio);
-	source.connect(analyser);
-	analyser.connect(audioContext.destination);
-
-	// Set up the analyser
-	analyser.fftSize = 256;
-	const bufferLength = analyser.frequencyBinCount;
-	const dataArray = new Uint8Array(bufferLength);
-
-	// Get the canvas element and set up the drawing context
-	const canvas = document.getElementById("visualizer");
-	const canvasCtx = canvas.getContext("2d");
-	const WIDTH = canvas.width;
-	const HEIGHT = canvas.height;
-
-	// Draw the visualizer
-	function draw() {
-		analyser.getByteFrequencyData(dataArray);
-
-		canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
-
-		const barWidth = (WIDTH / bufferLength) * 3.7;
-		let barHeight;
-		let x = 0;
-
-		for (let i = 0; i < bufferLength; i++) {
-			barHeight = dataArray[i];
-
-			canvasCtx.fillStyle = "rgb(50, 50, 50, 0.5)";
-			canvasCtx.fillRect(x, HEIGHT - barHeight / 2, barWidth, barHeight / 2);
-
-			x += barWidth + 1;
-		}
-		requestAnimationFrame(draw);
-	}
-	draw();
 });
