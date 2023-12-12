@@ -1,4 +1,4 @@
-/* google font Poppins */
+/* Google font Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
@@ -6,6 +6,7 @@ body {
   background-color: #1a1a1a;
   color: #f1f3f4;
   margin: 0;
+  box-sizing: border-box;
 }
 
 ul {
@@ -39,6 +40,10 @@ a {
   color: #00a6f9;
 }
 
+.nav-link small:hover {
+  color: #00a6f9;
+}
+
 img {
   width: 4rem;
   border-radius: 4px;
@@ -51,23 +56,15 @@ small {
 
 button {
   border-radius: 30px;
-  padding: 0.5rem 0.7rem;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   color: #f1f3f4;
   background-color: #1a1a1a;
-  border: 0;
+  border: #1a1a1a solid 2px;
 }
 
-button:hover {
-  background-color: #f1f3f4;
-  color: black;
-  border: 0;
-  transition: 200ms;
-}
-
-.scroll-button {
-  display: none;
+#toggleRepeat {
+  border: solid 2px #f1f3f4;
 }
 
 pre {
@@ -85,7 +82,37 @@ nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  border-radius: 8px;
+}
+
+.hero-template {
+  background-size: cover;
+  background-color: #3f3f3f;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  border-radius: 0px 8px 8px 0px;
+  z-index: -10;
+}
+
+.hero .chika {
+  background-image: url(../chara/chika/hero.jpg);
+}
+
+.hero .matsuri {
+  background-image: url(../chara/matsuri/hero.jpg);
+}
+
+.hero .ana {
+  background-image: url(../chara/ana/hero.jpg);
+}
+
+.hero .miu {
+  background-image: url(../chara/miu/hero.jpg);
+}
+
+canvas {
+  position: absolute;
+  z-index: -5;
 }
 
 .home-container {
@@ -95,20 +122,14 @@ nav ul {
 .button-container {
   display: flex;
   padding: 1rem 1rem 0.5rem 1rem;
-  justify-content: start;
+  justify-content: space-between;
   gap: 0.5rem;
-  align-items: center;
 }
 
 .lyrics p {
   cursor: pointer;
   font-weight: 600;
-  color: black;
-}
-
-.lyrics p:hover {
-  color: #f1f3f4;
-  transition: 200ms;
+  color: #111111;
 }
 
 .lyrics p.active {
@@ -120,14 +141,25 @@ nav ul {
   align-items: center;
 }
 
-.card:hover {
-  border: #f1f3f4 solid 1px;
-  transition: 200ms;
-}
-
 .lyrics-container {
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+
+.lyrics-container.chika {
+  background-color: #d51515;
+}
+
+.lyrics-container.ana {
+  background-color: #009146;
+}
+
+.lyrics-container.matsuri {
+  background-color: #1555d5;
+}
+
+.lyrics-container.miu {
+  background-color: #9b15d5;
 }
 
 #overflow {
@@ -147,8 +179,17 @@ nav ul {
 }
 
 .footer {
-  padding: 1rem 0 2rem 0;
+  padding: 1rem 0 1rem 0;
   text-align: center;
+  margin-bottom: 1rem;
+}
+
+.footer small {
+  display: block;
+}
+
+.footer :nth-child(2) {
+  margin-top: 1rem;
 }
 
 .wrap {
@@ -156,6 +197,34 @@ nav ul {
   border-radius: 8px;
   text-align: left;
   box-sizing: border-box;
+}
+
+/* Media query */
+@media screen and (max-width: 380px) {
+  .hero-template {
+    display: none;
+  }
+
+  .hero {
+    display: block;
+    text-align: center;
+    background-size: cover;
+    background-image: url(/assets/cover.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: #303030;
+    margin-bottom: 1rem;
+    box-shadow: inset #1a1a1a 0 -4rem 4rem;
+    padding: 1rem;
+  }
+
+  .button-container {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+
+  canvas {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 320px) {
@@ -175,9 +244,20 @@ nav ul {
     margin-bottom: 1rem;
     border-radius: 8px;
     border: lightslategray solid 1px;
-    background-color: black;
+    background-color: #101010;
     padding: 0 1rem 0 1rem;
     flex-shrink: 0;
+  }
+
+  .card:hover {
+    border: #f1f3f4 solid 1px;
+    background-color: black;
+    transition: 200ms;
+  }
+
+  .card.active {
+    border: #f1f3f4 2px solid;
+    background-color: black;
   }
 
   .row {
@@ -196,26 +276,70 @@ nav ul {
     padding: 1rem;
   }
 
-  .hero img {
-    width: 7rem;
-  }
-
   audio {
     width: 100%;
+    /* #1b1b1b */
+    filter: sepia(100%) saturate(100%) grayscale(1) contrast(100%) invert(90%);
+  }
+
+  button {
+    padding: 0.4rem 0.6rem;
+    font-weight: 700;
+  }
+
+  .button-left {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .hero-template {
+    background-position: right -0.5rem bottom 0;
+    padding: 6rem 10rem 6rem 2rem;
+    box-shadow: inset #1a1a1a 4rem 0 3rem;
+    margin-bottom: 1rem;
+  }
+
+  canvas {
+    top: 25vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media screen and (min-width: 465px) {
+  .hero-template {
+    padding: 6rem 15rem 6rem 2rem;
   }
 }
 
 @media screen and (min-width: 620px) {
   .grid {
-    margin: 0 8rem 0 8rem;
+    margin: 0 4rem 0 4rem;
   }
 
   .home-grid {
     padding: 0 10rem 0 10rem;
   }
 
+  .lyrics p {
+    font-size: x-large;
+  }
+
+  .lyrics p:hover {
+    color: #f1f3f4;
+  }
+
   audio {
-    width: 70%;
+    width: 60%;
+  }
+
+  .hero-template {
+    background-position: right -1rem bottom -1rem;
+    padding: 6rem 18rem 6rem 2rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -228,26 +352,32 @@ nav ul {
     display: initial;
   }
 
-  .lyrics p {
-    font-size: x-large;
-  }
-
   .home-grid {
     padding: 0 30rem 0 30rem;
   }
 
-  .hero img {
-    width: 6rem;
+  .button-container {
+    display: flex;
+    justify-content: space-between;
   }
 
-  audio {
-    width: 50%;
+  button {
+    padding: 0.5rem 0.7rem;
   }
-}
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  .hero-template {
+    background-position: right -1.5rem bottom -3.5rem;
+    padding: 6rem 15rem 6rem 10rem;
+  }
+
+  canvas {
+    top: 22.5vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 ::-webkit-scrollbar-track {
