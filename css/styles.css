@@ -1,12 +1,16 @@
 /* Google font Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #1a1a1a;
   color: #f1f3f4;
   margin: 0;
-  box-sizing: border-box;
 }
 
 ul {
@@ -91,7 +95,6 @@ nav ul {
   background-repeat: no-repeat;
   background-blend-mode: soft-light;
   border-radius: 0px 8px 8px 0px;
-  z-index: -10;
 }
 
 .hero .chika {
@@ -108,11 +111,6 @@ nav ul {
 
 .hero .miu {
   background-image: url(../chara/miu/hero.jpg);
-}
-
-canvas {
-  position: absolute;
-  z-index: -5;
 }
 
 .home-container {
@@ -170,6 +168,8 @@ canvas {
   text-align: left;
   padding: 0 1rem 1rem 1rem;
   border-radius: 8px;
+  /* Firefox */
+  scrollbar-width: none;
 }
 
 .media {
@@ -221,10 +221,6 @@ canvas {
   .button-container {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
-
-  canvas {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 320px) {
@@ -265,6 +261,8 @@ canvas {
     overflow-x: auto;
     gap: 1rem;
     height: 8rem;
+    /* Firefox */
+    scrollbar-width: thin;
   }
 
   .home-grid {
@@ -278,8 +276,10 @@ canvas {
 
   audio {
     width: 100%;
-    /* #1b1b1b */
-    filter: sepia(100%) saturate(100%) grayscale(1) contrast(100%) invert(90%);
+  }
+
+  .scroll-button {
+    display: none;
   }
 
   button {
@@ -297,10 +297,6 @@ canvas {
     padding: 6rem 10rem 6rem 2rem;
     box-shadow: inset #1a1a1a 4rem 0 3rem;
     margin-bottom: 1rem;
-  }
-
-  canvas {
-    top: 25vh;
   }
 
   ::-webkit-scrollbar {
@@ -341,15 +337,15 @@ canvas {
     padding: 6rem 18rem 6rem 2rem;
     margin-bottom: 1rem;
   }
+
+  .scroll-button {
+    display: initial;
+  }
 }
 
 @media screen and (min-width: 1220px) {
   .grid {
     margin: 0 20rem 0 20rem;
-  }
-
-  .scroll-button {
-    display: initial;
   }
 
   .home-grid {
@@ -370,16 +366,13 @@ canvas {
     padding: 6rem 15rem 6rem 10rem;
   }
 
-  canvas {
-    top: 22.5vh;
-  }
-
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 }
 
+/* Chrome, Edge scrollbar */
 ::-webkit-scrollbar-track {
   background: #f4f1f100;
   border-radius: 8px;
