@@ -98,19 +98,19 @@ nav ul {
 }
 
 .hero .chika {
-  background-image: url(../chara/chika/hero.jpg);
+  background-image: url(../chara/chika/hero.webp);
 }
 
 .hero .matsuri {
-  background-image: url(../chara/matsuri/hero.jpg);
+  background-image: url(../chara/matsuri/hero.webp);
 }
 
 .hero .ana {
-  background-image: url(../chara/ana/hero.jpg);
+  background-image: url(../chara/ana/hero.webp);
 }
 
 .hero .miu {
-  background-image: url(../chara/miu/hero.jpg);
+  background-image: url(../chara/miu/hero.webp);
 }
 
 .home-container {
@@ -209,17 +209,13 @@ nav ul {
     display: block;
     text-align: center;
     background-size: cover;
-    background-image: url(/assets/cover.jpg);
+    background-image: url(/assets/cover.webp);
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-color: #303030;
     margin-bottom: 1rem;
     box-shadow: inset #1a1a1a 0 -4rem 4rem;
     padding: 1rem;
-  }
-
-  .button-container {
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
 }
 
@@ -299,6 +295,10 @@ nav ul {
     margin-bottom: 1rem;
   }
 
+  .button-container {
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+
   ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -318,10 +318,6 @@ nav ul {
 
   .home-grid {
     padding: 0 10rem 0 10rem;
-  }
-
-  .lyrics p {
-    font-size: x-large;
   }
 
   .lyrics p:hover {
@@ -352,9 +348,8 @@ nav ul {
     padding: 0 30rem 0 30rem;
   }
 
-  .button-container {
-    display: flex;
-    justify-content: space-between;
+  .lyrics p {
+    font-size: x-large;
   }
 
   button {
