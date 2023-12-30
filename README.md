@@ -5,8 +5,11 @@
 ### Features
 
 -   Lyrics that follow every line of the song when played
--   Auto scroll (only for desktop view) [issue on mobile device](#problems)
+
+-   Auto scroll
+
 -   Responsive
+
 -   Lyrics are highlighted according to the audio timestamp
 
     ![highlighted](https://lh3.googleusercontent.com/pw/ADCreHcHiajT0oE9a0s1ijSat3LE5zOeVZv7vngsTigtUxCNRHS2uyCS76yxneE3wBys8eCg1vl-4PsfM_feGFlCKWhGewYBJ3ehomVTdVF9AlYsjVKHve8=w2400)
@@ -17,5 +20,4 @@
 
 ### Problems
 
--   Auto scroll in mobile device cause screen jitter (Have not been tested on a tablet/iPad)
--   There's an issue when using [Firefox](https://www.mozilla.org/en-US/firefox/new/) web audio player that makes the song doesn't match with the lyrics when clicking
+-   There's an issue when using Firefox that makes the song doesn't match with the lyrics when clicked
