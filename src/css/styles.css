@@ -239,7 +239,7 @@ nav ul {
     display: block;
     text-align: center;
     background-size: cover;
-    background-image: url(/assets/cover.webp);
+    background-image: url(../assets/cover.webp);
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-color: #303030;
