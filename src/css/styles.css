@@ -69,6 +69,7 @@ button {
 }
 
 pre {
+  margin: 3rem 0 2rem 0;
   font-size: small;
   color: #f1f3f4;
 }
@@ -315,11 +316,16 @@ nav ul {
 
   .row {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
     gap: 1rem;
     height: 8rem;
     /* Firefox */
     scrollbar-width: auto;
+  }
+
+  .row>* {
+    scroll-snap-align: start;
   }
 
   .home-grid {
