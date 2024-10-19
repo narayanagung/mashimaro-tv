@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: #1a1a1a;
-  color: #f1f3f4;
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 100%);
   margin: 0;
 }
 
@@ -23,49 +23,57 @@ li {
   font-weight: 600;
 }
 
+li a {
+  margin-left: 1rem;
+}
+
+li h3 a {
+  margin: 0;
+}
+
 li small {
   font-size: small;
 }
 
 a {
   text-decoration: none;
-  color: #f1f3f4;
+  color: hsl(0, 0%, 100%);
 }
 
 .nav-link {
   text-decoration: none;
-  color: #f1f3f4;
+  color: hsl(0, 0%, 100%);
 }
 
 .nav-link:hover {
-  color: #00a6f9;
+  color: hsl(200, 100%, 50%);
 }
 
 .nav-link small:hover {
-  color: #00a6f9;
+  color: hsl(200, 100%, 50%);
 }
 
 img {
   width: 4rem;
   border-radius: 4px;
   display: block;
-  outline: 2px solid #f1f3f4;
+  outline: 2px solid hsl(0, 0%, 100%);
 }
 
 small {
-  color: #aaaaaa;
+  color: hsl(0, 0%, 65%);
 }
 
 button {
-  border-radius: 30px;
+  border-radius: 8px;
   cursor: pointer;
-  color: #f1f3f4;
-  background-color: #1a1a1a;
-  border: #1a1a1a solid 2px;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 10%);
+  border: hsl(0, 0%, 10%) solid 2px;
 }
 
 #toggleRepeat {
-  border: solid 2px #f1f3f4;
+  border: solid 2px hsl(0, 0%, 100%);
 }
 
 pre {
@@ -89,9 +97,9 @@ nav ul {
 
 .hero-template {
   background-size: cover;
-  background-color: #3f3f3f;
+  background-color: hsl(0, 0%, 70%);
   background-repeat: no-repeat;
-  background-blend-mode: soft-light;
+  background-blend-mode: multiply;
   border-radius: 8px 8px;
 }
 
@@ -170,19 +178,19 @@ nav ul {
 }
 
 .lyrics-container.chika {
-  background-color: #d51515;
+  background-color: hsl(0, 55%, 55%);
 }
 
 .lyrics-container.ana {
-  background-color: #009146;
+  background-color: hsl(150, 100%, 30%);
 }
 
 .lyrics-container.matsuri {
-  background-color: #1555d5;
+  background-color: hsl(220, 65%, 55%);
 }
 
 .lyrics-container.miu {
-  background-color: #9b15d5;
+  background-color: hsl(282, 55%, 55%);
 }
 
 #overflow {
@@ -243,7 +251,7 @@ nav ul {
     background-image: url(../assets/cover.webp);
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-color: #303030;
+    background-color: hsl(0, 0%, 25%);
     margin-bottom: 1rem;
     -webkit-mask: linear-gradient(360deg, transparent, #fff 35%);
     mask: linear-gradient(360deg, transparent, #fff 35%);
@@ -275,8 +283,8 @@ nav ul {
     align-items: center;
     margin-bottom: 1rem;
     border-radius: 8px;
-    border: lightslategray solid 2px;
-    background-color: #101010;
+    border: hsl(210, 15%, 55%) solid 2px;
+    background-color: hsl(0, 0%, 5%);
     padding: 1rem;
   }
 
@@ -286,19 +294,19 @@ nav ul {
     align-items: center;
     margin-bottom: 1rem;
     border-radius: 8px;
-    border: lightslategray solid 1px;
+    border: hsl(210, 15%, 55%) solid 1px;
     background-color: #101010;
     padding: 0 1rem 0 1rem;
     flex-shrink: 0;
   }
 
   .card:hover {
-    border: #f1f3f4 solid 1px;
+    border: hsl(200, 10%, 95%) solid 1px;
     transition: 200ms ease-in-out;
   }
 
   .card.active {
-    border: #f1f3f4 2px solid;
+    border: hsl(200, 10%, 95%) 2px solid;
     background-color: black;
     background-image:
       linear-gradient(45deg,
@@ -310,7 +318,7 @@ nav ul {
   }
 
   button {
-    padding: 0.3rem 0.7rem 0.3rem 0.6rem;
+    padding: 0.2rem 0.7rem 0.2rem 0.7rem;
     font-weight: 600;
   }
 
@@ -370,9 +378,9 @@ nav ul {
   }
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 910px) {
   .grid {
-    margin: 0 4rem 0 4rem;
+    margin: 0 13rem 0 13rem;
   }
 
   .home-grid {
@@ -380,7 +388,7 @@ nav ul {
   }
 
   .lyrics p:hover {
-    color: #f1f3f4c6;
+    color: hsla(200, 10%, 95%, 0.7);
   }
 
   audio {
@@ -396,7 +404,7 @@ nav ul {
 
 @media screen and (min-width: 1220px) {
   .grid {
-    margin: 0 20rem 0 20rem;
+    margin: 0 25rem 0 25rem;
   }
 
   .home-grid {
@@ -404,11 +412,11 @@ nav ul {
   }
 
   .lyrics {
-    line-height: 2.3rem;
+    line-height: 1.8rem;
   }
 
   .lyrics p {
-    font-size: x-large;
+    font-size: 1.3rem;
   }
 
   .hero-template {
@@ -424,15 +432,15 @@ nav ul {
 
 /* Chrome, Edge scrollbar */
 ::-webkit-scrollbar-track {
-  background: #f4f1f100;
+  background: hsla(0, 10%, 95%, 0);
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f1f3f4;
+  background: hsl(200, 10%, 95%);
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: lightslategray;
+  background: hsl(210, 15%, 50%);
 }

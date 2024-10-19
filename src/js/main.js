@@ -34,12 +34,12 @@ toggleAutoScroll.addEventListener("click", () => {
 	const toggleAutoScroll = document.querySelector("#toggleAutoScroll");
 	autoScroll = !autoScroll;
 	if (autoScroll) {
-		toggleAutoScroll.textContent = "🔒 Scroll";
+		toggleAutoScroll.textContent = "Scroll";
 		toggleAutoScroll.style.border = "solid 2px #f1f3f4";
 		// Lock html scrollbar
 		document.querySelector("html").style.overflowY = "clip";
 	} else {
-		toggleAutoScroll.textContent = "🔓 Scroll";
+		toggleAutoScroll.textContent = "Scroll";
 		toggleAutoScroll.style.border = "solid 2px #1a1a1a";
 		document.querySelector("html").style.overflowY = "visible";
 	}
@@ -51,10 +51,10 @@ toggleRepeat.addEventListener("click", () => {
 	const toggleRepeat = document.querySelector("#toggleRepeat");
 	audio.loop = !audio.loop;
 	if (audio.loop) {
-		toggleRepeat.textContent = "🔁 Repeat";
+		toggleRepeat.textContent = "Repeat";
 		toggleRepeat.style.border = "solid 2px #f1f3f4";
 	} else {
-		toggleRepeat.textContent = "🟦 Repeat";
+		toggleRepeat.textContent = "Repeat";
 		toggleRepeat.style.border = "solid 2px #1a1a1a";
 	}
 });
