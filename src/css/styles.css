@@ -294,16 +294,16 @@ nav ul {
     align-items: center;
     margin-bottom: 1rem;
     border-radius: 8px;
-    border: hsl(210, 15%, 55%) solid 1px;
+    border: hsl(210, 15%, 55%) solid 2px;
     background-color: #101010;
     padding: 0 1rem 0 1rem;
     flex-shrink: 0;
   }
 
-  .card:hover {
+  /* .card:hover {
     border: hsl(200, 10%, 95%) solid 1px;
     transition: 200ms ease-in-out;
-  }
+  } */
 
   .card.active {
     border: hsl(200, 10%, 95%) 2px solid;
