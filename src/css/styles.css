@@ -64,6 +64,10 @@ small {
   color: hsl(0, 0%, 65%);
 }
 
+.credit {
+  color: hsl(0, 0%, 100%);
+}
+
 button {
   border-radius: 8px;
   cursor: pointer;
@@ -93,6 +97,12 @@ nav ul {
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
+  background-image:
+    linear-gradient(45deg,
+      hsla(0, 65%, 24%, 0.1) 8%,
+      hsla(273, 82%, 36%, 0.1) 34%,
+      hsla(220, 82%, 33%, 0.1) 67%,
+      hsla(147, 86%, 26%, 0.1) 87%);
 }
 
 .hero-template {
@@ -121,30 +131,31 @@ nav ul {
 
 .home-container {
   text-align: center;
+  cursor: default;
 }
 
 /* Intersection observer */
 /* Index.html */
-.hidden {
+/* .hidden {
   opacity: 0;
 }
 
 .show {
   opacity: 1;
-  transition: 600ms ease-in-out;
+  transition: 400ms ease-in-out;
 }
 
 .delay:nth-child(2) {
-  transition-delay: 200ms;
+  transition-delay: 100ms;
 }
 
 .delay:nth-child(3) {
-  transition-delay: 400ms;
+  transition-delay: 300ms;
 }
 
 .delay:nth-child(4) {
-  transition-delay: 600ms;
-}
+  transition-delay: 400ms;
+} */
 
 .button-container {
   display: flex;
@@ -178,19 +189,19 @@ nav ul {
 }
 
 .lyrics-container.chika {
-  background-color: hsl(0, 55%, 55%);
+  background-color: hsla(0, 55%, 55%, 0.9);
 }
 
 .lyrics-container.ana {
-  background-color: hsl(150, 100%, 30%);
+  background-color: hsla(150, 100%, 30%, 0.9);
 }
 
 .lyrics-container.matsuri {
-  background-color: hsl(220, 65%, 55%);
+  background-color: hsla(220, 65%, 55%, 0.9);
 }
 
 .lyrics-container.miu {
-  background-color: hsl(282, 55%, 55%);
+  background-color: hsla(282, 55%, 55%, 0.9);
 }
 
 #overflow {
@@ -221,6 +232,7 @@ nav ul {
   padding: 1rem 0 1rem 0;
   text-align: center;
   margin-bottom: 1rem;
+  cursor: default;
 }
 
 .footer small {
@@ -286,6 +298,19 @@ nav ul {
     border: hsl(210, 15%, 55%) solid 2px;
     background-color: hsl(0, 0%, 5%);
     padding: 1rem;
+    transition: 200ms;
+  }
+
+  .card-home:hover {
+    border: hsl(200, 10%, 95%) solid 2px;
+    box-shadow: 1px 1px 6px hsla(0, 0%, 100%);
+    transition: 200ms;
+    background-image:
+      linear-gradient(45deg,
+        hsla(0, 65%, 24%, 0.2) 8%,
+        hsla(273, 82%, 36%, 0.2) 34%,
+        hsla(220, 82%, 33%, 0.2) 67%,
+        hsla(147, 86%, 26%, 0.2) 87%);
   }
 
   .card {
@@ -298,23 +323,33 @@ nav ul {
     background-color: #101010;
     padding: 0 1rem 0 1rem;
     flex-shrink: 0;
+    transition: 200ms;
   }
 
-  /* .card:hover {
-    border: hsl(200, 10%, 95%) solid 1px;
-    transition: 200ms ease-in-out;
-  } */
+  .card:hover {
+    border: hsl(200, 10%, 95%) solid 2px;
+    box-shadow: 1px 1px 6px hsla(0, 0%, 100%);
+    transition: 200ms;
+    background-image:
+      linear-gradient(45deg,
+        hsla(0, 65%, 24%, 0.2) 8%,
+        hsla(273, 82%, 36%, 0.2) 34%,
+        hsla(220, 82%, 33%, 0.2) 67%,
+        hsla(147, 86%, 26%, 0.2) 87%);
+  }
 
   .card.active {
     border: hsl(200, 10%, 95%) 2px solid;
     background-color: black;
     background-image:
       linear-gradient(45deg,
-        hsla(0, 65%, 24%, 0.7) 8%,
-        hsla(273, 82%, 36%, 0.7) 34%,
-        hsla(220, 82%, 33%, 0.7) 67%,
-        hsla(147, 86%, 26%, 0.7) 87%);
+        hsla(0, 65%, 24%, 0.5) 8%,
+        hsla(273, 82%, 36%, 0.5) 34%,
+        hsla(220, 82%, 33%, 0.5) 67%,
+        hsla(147, 86%, 26%, 0.5) 87%);
     background-size: 100%;
+    box-shadow: 1px 1px 7px hsl(0, 0%, 100%);
+    cursor: default;
   }
 
   button {
@@ -375,6 +410,16 @@ nav ul {
 @media screen and (min-width: 465px) {
   .hero-template {
     padding: 6rem 15rem 6rem 2rem;
+  }
+}
+
+hgroup {
+  padding-left: 0;
+}
+
+@media screen and (min-width: 760px) {
+  hgroup {
+    padding-left: 1rem;
   }
 }
 

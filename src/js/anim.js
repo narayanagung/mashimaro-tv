@@ -1,3 +1,4 @@
+// Not implemented at the moment
 // Animation when load/scroll
 const homeObserver = new IntersectionObserver((homeEntry) => {
 	homeEntry.forEach((entry) => {
