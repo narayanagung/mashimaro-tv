@@ -9,7 +9,9 @@ audio.addEventListener("timeupdate", (e) => {
 		const line = lyrics.children[i];
 		const nextLine = lyrics.children[i + 1];
 		const startTime = parseFloat(line.getAttribute("timestamp"));
-		const endTime = nextLine ? parseFloat(nextLine.getAttribute("timestamp")) : audio.duration;
+		const endTime = nextLine
+			? parseFloat(nextLine.getAttribute("timestamp"))
+			: audio.duration;
 
 		//When the lyrics timestamp is matching the audio time : highlight the lyric
 		if (currentTime >= startTime && currentTime < endTime) {
@@ -34,12 +36,12 @@ toggleAutoScroll.addEventListener("click", () => {
 	const toggleAutoScroll = document.querySelector("#toggleAutoScroll");
 	autoScroll = !autoScroll;
 	if (autoScroll) {
-		toggleAutoScroll.textContent = "Scroll";
+		toggleAutoScroll.textContent = "Sync";
 		toggleAutoScroll.style.border = "solid 2px #f1f3f4";
 		// Lock html scrollbar
 		document.querySelector("html").style.overflowY = "clip";
 	} else {
-		toggleAutoScroll.textContent = "Scroll";
+		toggleAutoScroll.textContent = "Sync";
 		toggleAutoScroll.style.border = "solid 2px #1a1a1a";
 		document.querySelector("html").style.overflowY = "visible";
 	}
@@ -90,7 +92,9 @@ document.addEventListener("keydown", function (e) {
 });
 
 // Handle the fullscreen for most browser
-const toggleFullscreenButton = document.querySelector("#toggleFullscreenButton");
+const toggleFullscreenButton = document.querySelector(
+	"#toggleFullscreenButton",
+);
 const lyricsContainer = document.querySelector(".lyrics-container");
 
 toggleFullscreenButton.addEventListener("click", () => {
