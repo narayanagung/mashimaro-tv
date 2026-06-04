@@ -226,8 +226,6 @@ nav ul {
 }
 
 .media {
-	display: flex;
-	justify-content: center;
 	margin: 0 0 1rem 0;
 }
 
@@ -251,6 +249,12 @@ nav ul {
 	border-radius: 8px;
 	text-align: left;
 	box-sizing: border-box;
+}
+
+.home-card {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 0.5rem;
 }
 
 /* Media query */
@@ -296,7 +300,6 @@ nav ul {
 		display: flex;
 		gap: 1rem;
 		align-items: center;
-		margin-bottom: 1rem;
 		border-radius: 8px;
 		border: hsl(210, 15%, 55%) solid 2px;
 		background-color: hsl(0, 0%, 5%);
@@ -321,7 +324,6 @@ nav ul {
 		display: flex;
 		gap: 1rem;
 		align-items: center;
-		margin-bottom: 1rem;
 		border-radius: 8px;
 		border: hsl(210, 15%, 55%) solid 2px;
 		background-color: #101010;
@@ -363,18 +365,12 @@ nav ul {
 		font-weight: 600;
 	}
 
-	.row {
-		display: flex;
-		overflow-x: scroll;
-		scroll-snap-type: x mandatory;
-		gap: 1rem;
-		height: 8rem;
-		/* Firefox */
-		scrollbar-width: auto;
+	.home-card a {
+		padding-block: 1rem;
 	}
 
-	.row > * {
-		scroll-snap-align: start;
+	.home-card span {
+		padding-block: 1rem;
 	}
 
 	.home-grid {
@@ -427,6 +423,10 @@ hgroup {
 	hgroup {
 		padding-left: 1rem;
 	}
+
+	.home-card {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media screen and (min-width: 910px) {
@@ -459,7 +459,7 @@ hgroup {
 	}
 
 	.home-grid {
-		padding: 0 30rem 0 30rem;
+		padding: 0 25rem 0 25rem;
 	}
 
 	.lyrics {
